@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>滑动门</title>
+</head>
+<style>
+#div1 .active{ background:yellow;}
+#div1 div{ width:200px; height:200px; background:#ddd; border:1px solid #ccc; display:none;}
+
+
+</style>
+<script>
+window.onload=function(){
+	
+	var oDiv=document.getElementById("div1");
+	var oBtn=oDiv.getElementsByTagName("input");
+	var aDiv=oDiv.getElementsByTagName("div");
+	for(var i=0;i<oBtn.length;i++){
+		oBtn[i].index=i;
+		oBtn[i].onclick=function(){
+			for(var i=0;i<oBtn.length;i++){
+				oBtn[i].className='';
+				aDiv[i].style.display='none';
+				}
+			this.className='active';
+			aDiv[this.index].style.display="block";
+			}
+		}
+	}
+</script>
+<body>
+<div id="div1">
+<input name="" type="button" value="教育" class="active" />
+<input name="" type="button" value="培训" />
+<input name="" type="button" value="招生" />
+<input name="" type="button" value="出国" />
+<div style="display:block;">11111111</div>
+<div>22222222</div>
+<div>33333333</div>
+<div>44444444</div>
+
+</div>
+</body>
+</html>
