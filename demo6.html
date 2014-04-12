@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>日历</title>
+<style>
+*{ margin:0px; border:0px; padding:0px;}
+ul{ list-style:none;}
+.box{ width:290px; height:480px; background:#eee; border:1px solid #dddddd; margin:0 auto; margin-top:100px; padding-left:10px; padding-top:10px;}
+.box li{ float:left; width:80px; height:80px; line-height:80px; text-align:center; margin:5px; border:1px solid #dddddd; background:#666666; color:#fff; cursor:pointer;}
+.box .active{ background:#fff; color:red;}
+.content{ margin-top:20px; margin-left:10px;}
+</style>
+<script>
+window.onload=function(){
+	
+	var oDiv=document.getElementById("tab");
+	var oLi=oDiv.getElementsByTagName("li");
+	var oText=oDiv.getElementsByTagName("div")[0];
+	
+	var arr=[
+	'元宵节活',
+	'fadfa元宵节活',
+	'rtrtr元宵节活',
+	'afgfg元宵节活',
+	'cvzvz元宵节活',
+	'fadtrfaetra元宵节活',
+	'dfzsfasdf元宵节活',
+	'dafsfafd元宵节活',
+	
+	
+	];
+	for( var i=0;i<oLi.length;i++){	
+	oLi[i].index=i;
+	oLi[i].onmouseover=function(){
+		for( var i=0;i<oLi.length;i++)
+		{
+			oLi[i].className="";
+			}
+			this.className="active";
+			 oText.innerHTML='<h2>'+(this.index+1)+'月</h2><p>'+arr[this.index]+'</p>';
+		}
+	}
+
+	};
+
+
+</script>
+</head>
+<body>
+<div id="tab" class="box">
+<ul>
+<li class="active">1月</li>
+<li>2月</li>
+<li>3月</li>
+<li>4月</li>
+<li>5月</li>
+<li>6月</li>
+<li>7月</li>
+<li>8月</li>
+<li>9月</li>
+<li>10月</li>
+<li>11月</li>
+<li>12月</li>
+</ul>
+<p style="clear:both"></p>
+<div class="content">
+<h2>1月</h2>
+<p>元宵节放烟花活动</p>
+</div>
+
+</div>
+</body>
+</html>
